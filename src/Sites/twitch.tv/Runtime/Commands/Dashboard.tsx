@@ -333,7 +333,7 @@ const emoteNameRegex = new RegExp(`^[-_A-Za-z():0-9]{2,100}$`);
 
 
 
-const querys = {
+const querys = {
 	enable: `
 		mutation AddChannelEmote($ch: String!, $em: String!, $re: String!) {
 			addChannelEmote(channel_id: $ch, emote_id: $em, reason: $re) {

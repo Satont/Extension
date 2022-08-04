@@ -26,10 +26,10 @@ export class Nuke extends BaseCommand {
 		this.twitch.getChatController().props.messageHandlerAPI.addMessageHandler(this.messageHandler);
 	}
 
-	remove() {
+	remove() {
 		super.remove(this.command);
 		if (this.lastNuke) super.remove(this.undoCommand);
-		this.twitch.getChatController().props.messageHandlerAPI.addMessageHandler(this.messageHandler);
+		this.twitch.getChatController().props.messageHandlerAPI.removeMessageHandler(this.messageHandler);
 	}
 
 	private messageHandler = (msg: Twitch.ChatMessage) => {
